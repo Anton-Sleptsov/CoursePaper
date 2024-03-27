@@ -1,6 +1,6 @@
 ﻿namespace Курсовая_работа.Forms
 {
-    partial class AddingCategory
+    partial class AddingCategoryForm
     {
         /// <summary>
         /// Required designer variable.

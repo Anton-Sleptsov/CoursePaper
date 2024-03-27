@@ -5,9 +5,9 @@ namespace Курсовая_работа.Forms
     public partial class AddExpenditureForm : Form, IContainingListOfCategories
     {
         private readonly User user;
-        private readonly Form1 mainForm;
+        private readonly MainForm mainForm;
 
-        internal AddExpenditureForm(User user, Form1 mainForm)
+        internal AddExpenditureForm(User user, MainForm mainForm)
         {
             InitializeComponent();
 
@@ -27,7 +27,7 @@ namespace Курсовая_работа.Forms
 
         private void btnAddExpenseCategory_Click(object sender, EventArgs e)
         {
-            AddingCategory addingCategory = new(user, TypeOfCategory.Expenditure, this);
+            AddingCategoryForm addingCategory = new(user, TypeOfCategory.Expenditure, this);
             addingCategory.Show();
         }
 

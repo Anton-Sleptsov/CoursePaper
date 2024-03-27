@@ -11,12 +11,12 @@ using Курсовая_работа.Models;
 
 namespace Курсовая_работа.Forms
 {
-    public partial class AddingCategory : Form
+    public partial class AddingCategoryForm : Form
     {
         private readonly User user;
         private readonly TypeOfCategory typeOfCategory;
         private readonly IContainingListOfCategories form;
-        internal AddingCategory(User user, TypeOfCategory typeOfCategory, IContainingListOfCategories form)
+        internal AddingCategoryForm(User user, TypeOfCategory typeOfCategory, IContainingListOfCategories form)
         {
             InitializeComponent();
             this.user = user;

@@ -6,9 +6,9 @@ namespace Курсовая_работа
     public partial class AddIncomeForm : Form, IContainingListOfCategories
     {
         private readonly User user;
-        private readonly Form1 mainForm;
+        private readonly MainForm mainForm;
 
-        internal AddIncomeForm(User user, Form1 mainForm)
+        internal AddIncomeForm(User user, MainForm mainForm)
         {
             InitializeComponent();
 
@@ -28,7 +28,7 @@ namespace Курсовая_работа
 
         private void btnAddIncomeCategory_Click(object sender, EventArgs e)
         {
-            AddingCategory addingCategory = new(user, TypeOfCategory.Income, this);
+            AddingCategoryForm addingCategory = new(user, TypeOfCategory.Income, this);
             addingCategory.Show();
         }
 
