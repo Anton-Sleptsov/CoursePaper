@@ -30,10 +30,11 @@
         {
             lblBalance = new Label();
             txtBalance = new TextBox();
-            pictureBox1 = new PictureBox();
+            pbEdit = new PictureBox();
             btnOpenAddExpenditureForm = new Button();
             btnOpenAddIncomeForm = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            btnAllCategories = new Button();
+            ((System.ComponentModel.ISupportInitialize)pbEdit).BeginInit();
             SuspendLayout();
             // 
             // lblBalance
@@ -56,15 +57,16 @@
             txtBalance.TabIndex = 1;
             txtBalance.Text = "0";
             // 
-            // pictureBox1
+            // pbEdit
             // 
-            pictureBox1.Image = Properties.Resources.Edit;
-            pictureBox1.Location = new Point(186, 6);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(33, 34);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            pbEdit.Image = Properties.Resources.Edit;
+            pbEdit.Location = new Point(186, 6);
+            pbEdit.Name = "pbEdit";
+            pbEdit.Size = new Size(33, 34);
+            pbEdit.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbEdit.TabIndex = 2;
+            pbEdit.TabStop = false;
+            pbEdit.Click += pbEdit_Click;
             // 
             // btnOpenAddExpenditureForm
             // 
@@ -90,20 +92,33 @@
             btnOpenAddIncomeForm.UseVisualStyleBackColor = false;
             btnOpenAddIncomeForm.Click += btnOpenAddIncomeForm_Click;
             // 
-            // Form1
+            // btnAllCategories
+            // 
+            btnAllCategories.BackColor = Color.LightGoldenrodYellow;
+            btnAllCategories.Font = new Font("Calibri", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btnAllCategories.Location = new Point(12, 174);
+            btnAllCategories.Name = "btnAllCategories";
+            btnAllCategories.Size = new Size(207, 35);
+            btnAllCategories.TabIndex = 21;
+            btnAllCategories.Text = "Категории";
+            btnAllCategories.UseVisualStyleBackColor = false;
+            btnAllCategories.Click += btnAllCategories_Click;
+            // 
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightYellow;
             ClientSize = new Size(720, 318);
+            Controls.Add(btnAllCategories);
             Controls.Add(btnOpenAddIncomeForm);
             Controls.Add(btnOpenAddExpenditureForm);
-            Controls.Add(pictureBox1);
+            Controls.Add(pbEdit);
             Controls.Add(txtBalance);
             Controls.Add(lblBalance);
-            Name = "Form1";
+            Name = "MainForm";
             Text = "Личный бюджет";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbEdit).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -112,8 +127,9 @@
 
         private Label lblBalance;
         private TextBox txtBalance;
-        private PictureBox pictureBox1;
+        private PictureBox pbEdit;
         private Button btnOpenAddExpenditureForm;
         private Button btnOpenAddIncomeForm;
+        private Button btnAllCategories;
     }
 }

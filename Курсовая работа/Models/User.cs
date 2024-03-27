@@ -6,6 +6,19 @@
         {
             get
             {
+                return AmountOfExpensesAndIncomes + UserAllowance;
+            }
+            set { }
+        }
+        public List<Expenditure> Expenses { get; set; }
+        public List<Income> Incomes { get; set; }
+        public List<ExpenseCategory> ExpenseCategories { get; set; }
+        public List<IncomeCategory> IncomesCategories { get; set; }
+        public decimal UserAllowance { get; set; }
+        public decimal AmountOfExpensesAndIncomes
+        {
+            get
+            {
                 decimal sum = 0;
                 foreach (var expenditure in Expenses)
                     sum -= expenditure.Amount;
@@ -15,12 +28,7 @@
 
                 return sum;
             }
-            set { }
         }
-        public List<Expenditure> Expenses { get; set; }
-        public List<Income> Incomes { get; set; }
-        public List<ExpenseCategory> ExpenseCategories { get; set; }
-        public List<IncomeCategory> IncomesCategories { get; set; }
 
         public User()
         {
