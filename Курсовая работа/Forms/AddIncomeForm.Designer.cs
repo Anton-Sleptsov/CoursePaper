@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btnAddIncomeCategory = new Button();
             groupBox4 = new GroupBox();
             txtAmountOfIncome = new TextBox();
             groupBox3 = new GroupBox();
@@ -44,6 +45,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnAddIncomeCategory);
             groupBox1.Controls.Add(groupBox4);
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(groupBox2);
@@ -55,6 +57,18 @@
             groupBox1.TabIndex = 20;
             groupBox1.TabStop = false;
             groupBox1.Text = "Добавить доход";
+            // 
+            // btnAddIncomeCategory
+            // 
+            btnAddIncomeCategory.BackColor = Color.LightGoldenrodYellow;
+            btnAddIncomeCategory.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            btnAddIncomeCategory.Location = new Point(272, 311);
+            btnAddIncomeCategory.Name = "btnAddIncomeCategory";
+            btnAddIncomeCategory.Size = new Size(132, 35);
+            btnAddIncomeCategory.TabIndex = 23;
+            btnAddIncomeCategory.Text = "Добавить категорию";
+            btnAddIncomeCategory.UseVisualStyleBackColor = false;
+            btnAddIncomeCategory.Click += btnAddIncomeCategory_Click;
             // 
             // groupBox4
             // 
@@ -153,5 +167,6 @@
         private GroupBox groupBox4;
         private GroupBox groupBox3;
         private GroupBox groupBox2;
+        private Button btnAddIncomeCategory;
     }
 }

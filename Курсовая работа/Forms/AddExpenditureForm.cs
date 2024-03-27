@@ -1,26 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Курсовая_работа.Models;
+﻿using Курсовая_работа.Models;
 
 namespace Курсовая_работа.Forms
 {
     public partial class AddExpenditureForm : Form, IContainingListOfCategories
     {
         private readonly User user;
+        private readonly Form1 mainForm;
 
-        internal AddExpenditureForm(User user)
+        internal AddExpenditureForm(User user, Form1 mainForm)
         {
             InitializeComponent();
+
             this.user = user;
+            this.mainForm = mainForm;
+            dateOfExpenditure.Value = DateTime.Now;
 
             RenderListOfCategories();
+        }
+
+        public void RenderListOfCategories()
+        {
+            lstExpenseCategories.Items.Clear();
+            foreach (var item in user.ExpenseCategories)
+                lstExpenseCategories.Items.Add(item);
         }
 
         private void btnAddExpenseCategory_Click(object sender, EventArgs e)
@@ -29,11 +31,46 @@ namespace Курсовая_работа.Forms
             addingCategory.Show();
         }
 
-        public void RenderListOfCategories()
+        private void btnAddExpense_Click(object sender, EventArgs e)
         {
-            lstExpenseCategories.Items.Clear();
-            foreach (var item in user.ExpenseCategories)
-                lstExpenseCategories.Items.Add(item);
+            DateTime date = dateOfExpenditure.Value;
+            if (date > DateTime.Now)
+            {
+                MessageBox.Show("Дата расхода не может находиться в будущем!");
+                dateOfExpenditure.Value = DateTime.Now;
+                return;
+            }
+
+            if (!decimal.TryParse(txtAmountOfExpense.Text, out decimal amount))
+            {
+                MessageBox.Show("Введите сумму в верном формате!");
+                txtAmountOfExpense.Text = string.Empty;
+                return;
+            }
+            else if (amount < 0)
+            {
+                MessageBox.Show("Сумма не может быть отрицательной!");
+                txtAmountOfExpense.Text = string.Empty;
+                return;
+            }
+
+            if (lstExpenseCategories.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите категорию!");
+                return;
+            }
+            string categoryInString = lstExpenseCategories.SelectedItem.ToString();
+            ExpenseCategory category = user.ExpenseCategories.FirstOrDefault(x => x.Title == categoryInString);
+            if (category == null)
+            {
+                MessageBox.Show("Выберите категорию!");
+                return;
+            }
+
+            user.Expenses.Add(new(date, amount, category));
+            //MessageBox.Show("Расход успешно добавлен");
+            Close();
+            mainForm.ShowBalance();
         }
     }
 }

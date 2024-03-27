@@ -88,6 +88,7 @@
             btnOpenAddIncomeForm.TabIndex = 20;
             btnOpenAddIncomeForm.Text = "Добавить доход";
             btnOpenAddIncomeForm.UseVisualStyleBackColor = false;
+            btnOpenAddIncomeForm.Click += btnOpenAddIncomeForm_Click;
             // 
             // Form1
             // 

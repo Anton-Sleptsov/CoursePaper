@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btnAddExpenseCategory = new Button();
             groupBox4 = new GroupBox();
             txtAmountOfExpense = new TextBox();
             groupBox3 = new GroupBox();
@@ -36,7 +37,6 @@
             groupBox2 = new GroupBox();
             lstExpenseCategories = new ListBox();
             btnAddExpense = new Button();
-            btnAddExpenseCategory = new Button();
             groupBox1.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -57,6 +57,18 @@
             groupBox1.TabIndex = 20;
             groupBox1.TabStop = false;
             groupBox1.Text = "Добавить расход";
+            // 
+            // btnAddExpenseCategory
+            // 
+            btnAddExpenseCategory.BackColor = Color.LightGoldenrodYellow;
+            btnAddExpenseCategory.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            btnAddExpenseCategory.Location = new Point(272, 311);
+            btnAddExpenseCategory.Name = "btnAddExpenseCategory";
+            btnAddExpenseCategory.Size = new Size(132, 35);
+            btnAddExpenseCategory.TabIndex = 22;
+            btnAddExpenseCategory.Text = "Добавить категорию";
+            btnAddExpenseCategory.UseVisualStyleBackColor = false;
+            btnAddExpenseCategory.Click += btnAddExpenseCategory_Click;
             // 
             // groupBox4
             // 
@@ -126,18 +138,7 @@
             btnAddExpense.TabIndex = 18;
             btnAddExpense.Text = "Добавить расход";
             btnAddExpense.UseVisualStyleBackColor = false;
-            // 
-            // btnAddExpenseCategory
-            // 
-            btnAddExpenseCategory.BackColor = Color.LightGoldenrodYellow;
-            btnAddExpenseCategory.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            btnAddExpenseCategory.Location = new Point(272, 311);
-            btnAddExpenseCategory.Name = "btnAddExpenseCategory";
-            btnAddExpenseCategory.Size = new Size(132, 35);
-            btnAddExpenseCategory.TabIndex = 22;
-            btnAddExpenseCategory.Text = "Добавить категорию";
-            btnAddExpenseCategory.UseVisualStyleBackColor = false;
-            btnAddExpenseCategory.Click += btnAddExpenseCategory_Click;
+            btnAddExpense.Click += btnAddExpense_Click;
             // 
             // AddExpenditureForm
             // 

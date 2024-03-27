@@ -48,7 +48,7 @@ namespace Курсовая_работа.Forms
                 {
                     user.IncomesCategories.Add(new(title));
                     txtTitleOfCategory.Text = string.Empty;
-                    MessageBox.Show("Категория добавлена");
+                    //MessageBox.Show("Категория добавлена");
                     Close();
                     form.RenderListOfCategories();
                 }
@@ -67,7 +67,7 @@ namespace Курсовая_работа.Forms
                 {
                     user.ExpenseCategories.Add(new(title));
                     txtTitleOfCategory.Text = string.Empty;
-                    MessageBox.Show("Категория добавлена");
+                    //MessageBox.Show("Категория добавлена");
                     Close();
                     form.RenderListOfCategories();
                 }
