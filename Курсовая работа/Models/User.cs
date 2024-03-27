@@ -21,5 +21,14 @@
         public List<Income> Incomes { get; set; }
         public List<ExpenseCategory> ExpenseCategories { get; set; }
         public List<IncomeCategory> IncomesCategories { get; set; }
+
+        public User()
+        {
+            Balance = 0;
+            Expenses = new();
+            Incomes = new();    
+            ExpenseCategories = new();
+            IncomesCategories = new();
+        }
     }
 }

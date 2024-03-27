@@ -36,6 +36,7 @@
             groupBox2 = new GroupBox();
             lstExpenseCategories = new ListBox();
             btnAddExpense = new Button();
+            btnAddExpenseCategory = new Button();
             groupBox1.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -44,6 +45,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnAddExpenseCategory);
             groupBox1.Controls.Add(groupBox4);
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(groupBox2);
@@ -125,6 +127,18 @@
             btnAddExpense.Text = "Добавить расход";
             btnAddExpense.UseVisualStyleBackColor = false;
             // 
+            // btnAddExpenseCategory
+            // 
+            btnAddExpenseCategory.BackColor = Color.LightGoldenrodYellow;
+            btnAddExpenseCategory.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            btnAddExpenseCategory.Location = new Point(272, 311);
+            btnAddExpenseCategory.Name = "btnAddExpenseCategory";
+            btnAddExpenseCategory.Size = new Size(132, 35);
+            btnAddExpenseCategory.TabIndex = 22;
+            btnAddExpenseCategory.Text = "Добавить категорию";
+            btnAddExpenseCategory.UseVisualStyleBackColor = false;
+            btnAddExpenseCategory.Click += btnAddExpenseCategory_Click;
+            // 
             // AddExpenditureForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -152,5 +166,6 @@
         private GroupBox groupBox4;
         private GroupBox groupBox3;
         private GroupBox groupBox2;
+        private Button btnAddExpenseCategory;
     }
 }

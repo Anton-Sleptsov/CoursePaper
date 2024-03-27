@@ -30,12 +30,12 @@
         {
             groupBox1 = new GroupBox();
             groupBox4 = new GroupBox();
+            txtAmountOfIncome = new TextBox();
             groupBox3 = new GroupBox();
             dateOfIncome = new DateTimePicker();
             groupBox2 = new GroupBox();
             lstIncomeCategories = new ListBox();
             btnAddIncome = new Button();
-            txtAmountOfIncome = new TextBox();
             groupBox1.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -66,6 +66,14 @@
             groupBox4.TabIndex = 21;
             groupBox4.TabStop = false;
             groupBox4.Text = "Введите сумму";
+            // 
+            // txtAmountOfIncome
+            // 
+            txtAmountOfIncome.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            txtAmountOfIncome.Location = new Point(6, 25);
+            txtAmountOfIncome.Name = "txtAmountOfIncome";
+            txtAmountOfIncome.Size = new Size(167, 26);
+            txtAmountOfIncome.TabIndex = 17;
             // 
             // groupBox3
             // 
@@ -116,14 +124,7 @@
             btnAddIncome.TabIndex = 18;
             btnAddIncome.Text = "Добавить доход";
             btnAddIncome.UseVisualStyleBackColor = false;
-            // 
-            // txtAmountOfIncome
-            // 
-            txtAmountOfIncome.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtAmountOfIncome.Location = new Point(6, 25);
-            txtAmountOfIncome.Name = "txtAmountOfIncome";
-            txtAmountOfIncome.Size = new Size(167, 26);
-            txtAmountOfIncome.TabIndex = 17;
+            btnAddIncome.Click += btnAddIncome_Click;
             // 
             // AddIncomeForm
             // 

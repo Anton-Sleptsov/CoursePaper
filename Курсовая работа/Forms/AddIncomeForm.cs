@@ -1,21 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Курсовая_работа.Models;
 
 namespace Курсовая_работа
 {
     public partial class AddIncomeForm : Form
     {
-        public AddIncomeForm()
+        private readonly User user;
+        internal AddIncomeForm(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
+        private void btnAddIncome_Click(object sender, EventArgs e)
+        {
+            DateTime date = dateOfIncome.Value;
+            decimal amount = decimal.Parse(txtAmountOfIncome.Text);
+            IncomeCategory category = lstIncomeCategories.SelectedItem as IncomeCategory;
+
+            user.Incomes.Add( new(date, amount, category));
+        }
     }
 }

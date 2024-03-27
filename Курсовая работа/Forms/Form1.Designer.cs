@@ -76,6 +76,7 @@
             btnOpenAddExpenditureForm.TabIndex = 19;
             btnOpenAddExpenditureForm.Text = "Добавить расход";
             btnOpenAddExpenditureForm.UseVisualStyleBackColor = false;
+            btnOpenAddExpenditureForm.Click += btnOpenAddExpenditureForm_Click;
             // 
             // btnOpenAddIncomeForm
             // 
