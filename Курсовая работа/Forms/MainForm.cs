@@ -81,5 +81,17 @@ namespace Курсовая_работа
             AllCategoriesForm allCategoriesForm = new(user);
             allCategoriesForm.Show();
         }
+
+        private void btnTableOfOperations_Click(object sender, EventArgs e)
+        {
+            if (txtBalance.Enabled)
+            {
+                MessageBox.Show("Сначала закончите редактирование баланса!");
+                return;
+            }
+
+            TableOfOperationsForm tableOfOperationsForm = new(user);
+            tableOfOperationsForm.Show();
+        }
     }
 }

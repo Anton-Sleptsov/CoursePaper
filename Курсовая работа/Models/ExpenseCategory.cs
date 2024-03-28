@@ -1,6 +1,6 @@
 ﻿namespace Курсовая_работа.Models
 {
-    internal class ExpenseCategory(string title)
+    internal class ExpenseCategory(string title) : Category
     {
         public string Title { get; set; } = title;
 

@@ -1,16 +1,7 @@
 ﻿namespace Курсовая_работа.Models
 {
-    internal class Expenditure
+    internal class Expenditure : Operation
     {
-        public DateTime Date { get; set; } 
-        public decimal Amount { get; set; } 
-        public ExpenseCategory Category { get; set; }
-
-        public Expenditure(DateTime date, decimal amount, ExpenseCategory category)
-        {
-            Date = date;
-            Amount = amount;
-            Category = category;
-        }
+        public Expenditure(DateTime date, decimal amount, ExpenseCategory category) : base(date, amount, category) { }
     }
 }

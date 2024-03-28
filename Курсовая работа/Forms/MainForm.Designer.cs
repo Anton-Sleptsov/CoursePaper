@@ -34,6 +34,7 @@
             btnOpenAddExpenditureForm = new Button();
             btnOpenAddIncomeForm = new Button();
             btnAllCategories = new Button();
+            btnTableOfOperations = new Button();
             ((System.ComponentModel.ISupportInitialize)pbEdit).BeginInit();
             SuspendLayout();
             // 
@@ -104,12 +105,25 @@
             btnAllCategories.UseVisualStyleBackColor = false;
             btnAllCategories.Click += btnAllCategories_Click;
             // 
+            // btnTableOfOperations
+            // 
+            btnTableOfOperations.BackColor = Color.LightGoldenrodYellow;
+            btnTableOfOperations.Font = new Font("Calibri", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btnTableOfOperations.Location = new Point(12, 225);
+            btnTableOfOperations.Name = "btnTableOfOperations";
+            btnTableOfOperations.Size = new Size(207, 35);
+            btnTableOfOperations.TabIndex = 22;
+            btnTableOfOperations.Text = "Список операций";
+            btnTableOfOperations.UseVisualStyleBackColor = false;
+            btnTableOfOperations.Click += btnTableOfOperations_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightYellow;
-            ClientSize = new Size(720, 318);
+            ClientSize = new Size(315, 318);
+            Controls.Add(btnTableOfOperations);
             Controls.Add(btnAllCategories);
             Controls.Add(btnOpenAddIncomeForm);
             Controls.Add(btnOpenAddExpenditureForm);
@@ -131,5 +145,6 @@
         private Button btnOpenAddExpenditureForm;
         private Button btnOpenAddIncomeForm;
         private Button btnAllCategories;
+        private Button btnTableOfOperations;
     }
 }
