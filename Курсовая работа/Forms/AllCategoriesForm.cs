@@ -35,19 +35,26 @@ namespace Курсовая_работа.Forms
                 lstExpenseCategories.Items.Add(item);
         }
 
-        private void pbUpdateCategories_Click(object sender, EventArgs e)
-        {
-            RenderListOfCategories();
-        }
-
         private void pbAddExpenseCategory_Click(object sender, EventArgs e)
         {
+            if (txtNewTitleExpenseCategory.Visible || txtNewTitleIncomeCategory.Visible)
+            {
+                MessageBox.Show("Сначала закончите редактирование категории!");
+                return;
+            }
+
             AddingCategoryForm addingCategory = new(user, TypeOfCategory.Expenditure, this);
             addingCategory.Show();
         }
 
         private void pbDeleteExpenseCategory_Click(object sender, EventArgs e)
         {
+            if (txtNewTitleExpenseCategory.Visible || txtNewTitleIncomeCategory.Visible)
+            {
+                MessageBox.Show("Сначала закончите редактирование категории!");
+                return;
+            }
+
             if (lstExpenseCategories.SelectedItem == null)
             {
                 MessageBox.Show("Выберите категорию!");
@@ -74,12 +81,24 @@ namespace Курсовая_работа.Forms
 
         private void pbAddIncomeCategory_Click(object sender, EventArgs e)
         {
+            if (txtNewTitleExpenseCategory.Visible || txtNewTitleIncomeCategory.Visible)
+            {
+                MessageBox.Show("Сначала закончите редактирование категории!");
+                return;
+            }
+
             AddingCategoryForm addingCategory = new(user, TypeOfCategory.Income, this);
             addingCategory.Show();
         }
 
         private void pbDeleteIncomeCategory_Click(object sender, EventArgs e)
         {
+            if (txtNewTitleExpenseCategory.Visible || txtNewTitleIncomeCategory.Visible)
+            {
+                MessageBox.Show("Сначала закончите редактирование категории!");
+                return;
+            }
+
             if (lstIncomeCategories.SelectedItem == null)
             {
                 MessageBox.Show("Выберите категорию!");
@@ -119,20 +138,20 @@ namespace Курсовая_работа.Forms
                 return;
             }
 
-            if (!txtNewTitle.Visible)
+            if (!txtNewTitleExpenseCategory.Visible)
             {
-                txtNewTitle.Text = categoryInString;
-                txtNewTitle.Focus();
+                txtNewTitleExpenseCategory.Text = categoryInString;
+                txtNewTitleExpenseCategory.Focus();
             }
             else
             {
-                string title = txtNewTitle.Text;
-                if(string.IsNullOrWhiteSpace(title))
+                string title = txtNewTitleExpenseCategory.Text;
+                if (string.IsNullOrWhiteSpace(title))
                 {
                     MessageBox.Show("Новое название не может быть пустым!");
-                    txtNewTitle.Text = string.Empty;
-                    txtNewTitle.Visible = !txtNewTitle.Visible;
-                    lblNewTitle.Visible = !lblNewTitle.Visible;
+                    txtNewTitleExpenseCategory.Text = string.Empty;
+                    txtNewTitleExpenseCategory.Visible = !txtNewTitleExpenseCategory.Visible;
+                    lblNewTitleExpenseCategory.Visible = !lblNewTitleExpenseCategory.Visible;
                     return;
                 }
 
@@ -140,21 +159,21 @@ namespace Курсовая_работа.Forms
                 if (currentCategory != null)
                 {
                     MessageBox.Show("Такая категория уже есть!");
-                    txtNewTitle.Text = string.Empty;
-                    txtNewTitle.Visible = !txtNewTitle.Visible;
-                    lblNewTitle.Visible = !lblNewTitle.Visible;
+                    txtNewTitleExpenseCategory.Text = string.Empty;
+                    txtNewTitleExpenseCategory.Visible = !txtNewTitleExpenseCategory.Visible;
+                    lblNewTitleExpenseCategory.Visible = !lblNewTitleExpenseCategory.Visible;
                     return;
                 }
                 else
                 {
                     category.Title = title;
-                    txtNewTitle.Text = string.Empty;
+                    txtNewTitleExpenseCategory.Text = string.Empty;
                     RenderListOfCategories();
                 }
             }
 
-            txtNewTitle.Visible = !txtNewTitle.Visible;
-            lblNewTitle.Visible = !lblNewTitle.Visible;
+            txtNewTitleExpenseCategory.Visible = !txtNewTitleExpenseCategory.Visible;
+            lblNewTitleExpenseCategory.Visible = !lblNewTitleExpenseCategory.Visible;
         }
 
         private void pbEditIncomeCategory_Click(object sender, EventArgs e)
@@ -172,20 +191,20 @@ namespace Курсовая_работа.Forms
                 return;
             }
 
-            if (!txtNewTitle.Visible)
+            if (!txtNewTitleIncomeCategory.Visible)
             {
-                txtNewTitle.Text = categoryInString;
-                txtNewTitle.Focus();
+                txtNewTitleIncomeCategory.Text = categoryInString;
+                txtNewTitleIncomeCategory.Focus();
             }
             else
             {
-                string title = txtNewTitle.Text;
+                string title = txtNewTitleIncomeCategory.Text;
                 if (string.IsNullOrWhiteSpace(title))
                 {
                     MessageBox.Show("Новое название не может быть пустым!");
-                    txtNewTitle.Text = string.Empty;
-                    txtNewTitle.Visible = !txtNewTitle.Visible;
-                    lblNewTitle.Visible = !lblNewTitle.Visible;
+                    txtNewTitleIncomeCategory.Text = string.Empty;
+                    txtNewTitleExpenseCategory.Visible = !txtNewTitleIncomeCategory.Visible;
+                    lblNewTitleIncomeCategory.Visible = !lblNewTitleIncomeCategory.Visible;
                     return;
                 }
 
@@ -193,21 +212,49 @@ namespace Курсовая_работа.Forms
                 if (currentCategory != null)
                 {
                     MessageBox.Show("Такая категория уже есть!");
-                    txtNewTitle.Text = string.Empty;
-                    txtNewTitle.Visible = !txtNewTitle.Visible;
-                    lblNewTitle.Visible = !lblNewTitle.Visible;
+                    txtNewTitleIncomeCategory.Text = string.Empty;
+                    txtNewTitleIncomeCategory.Visible = !txtNewTitleIncomeCategory.Visible;
+                    lblNewTitleIncomeCategory.Visible = !lblNewTitleIncomeCategory.Visible;
                     return;
                 }
                 else
                 {
                     category.Title = title;
-                    txtNewTitle.Text = string.Empty;
+                    txtNewTitleIncomeCategory.Text = string.Empty;
                     RenderListOfCategories();
                 }
             }
 
-            txtNewTitle.Visible = !txtNewTitle.Visible;
-            lblNewTitle.Visible = !lblNewTitle.Visible;
+            txtNewTitleIncomeCategory.Visible = !txtNewTitleIncomeCategory.Visible;
+            lblNewTitleIncomeCategory.Visible = !lblNewTitleIncomeCategory.Visible;
+        }
+
+        private void lstExpenseCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstExpenseCategories.SelectedItem?.ToString() == "Другое")
+            {
+                pbDeleteExpenseCategory.Visible = false;
+                pbEditExpenseCategory.Visible = false;
+            }
+            else
+            {
+                pbDeleteExpenseCategory.Visible = true;
+                pbEditExpenseCategory.Visible = true;
+            }
+        }
+
+        private void lstIncomeCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstIncomeCategories.SelectedItem?.ToString() == "Другое")
+            {
+                pbDeleteIncomeCategory.Visible = false;
+                pbEditIncomeCategory.Visible = false;
+            }
+            else
+            {
+                pbDeleteIncomeCategory.Visible = true;
+                pbEditIncomeCategory.Visible = true;
+            }
         }
     }
 }

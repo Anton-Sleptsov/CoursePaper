@@ -35,8 +35,9 @@
             Balance = 0;
             Expenses = new();
             Incomes = new();    
-            ExpenseCategories = new();
-            IncomesCategories = new();
+            ExpenseCategories = [new("Другое")];
+            IncomesCategories = [new("Другое")];
+
         }
     }
 }
