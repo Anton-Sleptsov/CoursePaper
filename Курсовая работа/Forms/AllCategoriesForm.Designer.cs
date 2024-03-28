@@ -30,22 +30,26 @@
         {
             tabAllCategories = new TabControl();
             ExpenseCategories = new TabPage();
+            pbEditExpenseCategory = new PictureBox();
             pbAddExpenseCategory = new PictureBox();
             pbDeleteExpenseCategory = new PictureBox();
             lstExpenseCategories = new ListBox();
             IncomesCategories = new TabPage();
-            lstIncomeCategories = new ListBox();
-            pbUpdateCategories = new PictureBox();
             pbAddIncomeCategory = new PictureBox();
             pbDeleteIncomeCategory = new PictureBox();
+            lstIncomeCategories = new ListBox();
+            txtNewTitle = new TextBox();
+            lblNewTitle = new Label();
+            pbEditIncomeCategory = new PictureBox();
             tabAllCategories.SuspendLayout();
             ExpenseCategories.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbEditExpenseCategory).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAddExpenseCategory).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbDeleteExpenseCategory).BeginInit();
             IncomesCategories.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbUpdateCategories).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAddIncomeCategory).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbDeleteIncomeCategory).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbEditIncomeCategory).BeginInit();
             SuspendLayout();
             // 
             // tabAllCategories
@@ -60,6 +64,7 @@
             // 
             // ExpenseCategories
             // 
+            ExpenseCategories.Controls.Add(pbEditExpenseCategory);
             ExpenseCategories.Controls.Add(pbAddExpenseCategory);
             ExpenseCategories.Controls.Add(pbDeleteExpenseCategory);
             ExpenseCategories.Controls.Add(lstExpenseCategories);
@@ -70,6 +75,17 @@
             ExpenseCategories.TabIndex = 0;
             ExpenseCategories.Text = "Категории расходов";
             ExpenseCategories.UseVisualStyleBackColor = true;
+            // 
+            // pbEditExpenseCategory
+            // 
+            pbEditExpenseCategory.Image = Properties.Resources.Edit;
+            pbEditExpenseCategory.Location = new Point(164, 196);
+            pbEditExpenseCategory.Name = "pbEditExpenseCategory";
+            pbEditExpenseCategory.Size = new Size(31, 31);
+            pbEditExpenseCategory.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbEditExpenseCategory.TabIndex = 16;
+            pbEditExpenseCategory.TabStop = false;
+            pbEditExpenseCategory.Click += pbEditExpenseCategory_Click;
             // 
             // pbAddExpenseCategory
             // 
@@ -104,6 +120,7 @@
             // 
             // IncomesCategories
             // 
+            IncomesCategories.Controls.Add(pbEditIncomeCategory);
             IncomesCategories.Controls.Add(pbAddIncomeCategory);
             IncomesCategories.Controls.Add(pbDeleteIncomeCategory);
             IncomesCategories.Controls.Add(lstIncomeCategories);
@@ -114,27 +131,6 @@
             IncomesCategories.TabIndex = 1;
             IncomesCategories.Text = "Категории доходов";
             IncomesCategories.UseVisualStyleBackColor = true;
-            // 
-            // lstIncomeCategories
-            // 
-            lstIncomeCategories.FormattingEnabled = true;
-            lstIncomeCategories.ItemHeight = 15;
-            lstIncomeCategories.Location = new Point(6, 6);
-            lstIncomeCategories.Name = "lstIncomeCategories";
-            lstIncomeCategories.Size = new Size(226, 184);
-            lstIncomeCategories.TabIndex = 13;
-            // 
-            // pbUpdateCategories
-            // 
-            pbUpdateCategories.Image = Properties.Resources.Update1;
-            pbUpdateCategories.Location = new Point(238, 310);
-            pbUpdateCategories.Name = "pbUpdateCategories";
-            pbUpdateCategories.Size = new Size(34, 32);
-            pbUpdateCategories.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbUpdateCategories.TabIndex = 14;
-            pbUpdateCategories.TabStop = false;
-            pbUpdateCategories.Visible = false;
-            pbUpdateCategories.Click += pbUpdateCategories_Click;
             // 
             // pbAddIncomeCategory
             // 
@@ -158,25 +154,66 @@
             pbDeleteIncomeCategory.TabStop = false;
             pbDeleteIncomeCategory.Click += pbDeleteIncomeCategory_Click;
             // 
+            // lstIncomeCategories
+            // 
+            lstIncomeCategories.FormattingEnabled = true;
+            lstIncomeCategories.ItemHeight = 15;
+            lstIncomeCategories.Location = new Point(6, 6);
+            lstIncomeCategories.Name = "lstIncomeCategories";
+            lstIncomeCategories.Size = new Size(226, 184);
+            lstIncomeCategories.TabIndex = 13;
+            // 
+            // txtNewTitle
+            // 
+            txtNewTitle.Location = new Point(30, 329);
+            txtNewTitle.Name = "txtNewTitle";
+            txtNewTitle.Size = new Size(162, 23);
+            txtNewTitle.TabIndex = 15;
+            txtNewTitle.Visible = false;
+            // 
+            // lblNewTitle
+            // 
+            lblNewTitle.AutoSize = true;
+            lblNewTitle.Location = new Point(30, 311);
+            lblNewTitle.Name = "lblNewTitle";
+            lblNewTitle.Size = new Size(142, 15);
+            lblNewTitle.TabIndex = 16;
+            lblNewTitle.Text = "Введите новое название:";
+            lblNewTitle.Visible = false;
+            // 
+            // pbEditIncomeCategory
+            // 
+            pbEditIncomeCategory.Image = Properties.Resources.Edit;
+            pbEditIncomeCategory.Location = new Point(164, 196);
+            pbEditIncomeCategory.Name = "pbEditIncomeCategory";
+            pbEditIncomeCategory.Size = new Size(31, 31);
+            pbEditIncomeCategory.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbEditIncomeCategory.TabIndex = 18;
+            pbEditIncomeCategory.TabStop = false;
+            pbEditIncomeCategory.Click += pbEditIncomeCategory_Click;
+            // 
             // AllCategoriesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightYellow;
-            ClientSize = new Size(348, 365);
-            Controls.Add(pbUpdateCategories);
+            ClientSize = new Size(348, 388);
+            Controls.Add(lblNewTitle);
+            Controls.Add(txtNewTitle);
             Controls.Add(tabAllCategories);
             Name = "AllCategoriesForm";
             Text = "Все категории";
             tabAllCategories.ResumeLayout(false);
             ExpenseCategories.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbEditExpenseCategory).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAddExpenseCategory).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbDeleteExpenseCategory).EndInit();
             IncomesCategories.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbUpdateCategories).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAddIncomeCategory).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbDeleteIncomeCategory).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbEditIncomeCategory).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -186,10 +223,13 @@
         private TabPage IncomesCategories;
         private ListBox lstIncomeCategories;
         private ListBox lstExpenseCategories;
-        private PictureBox pbUpdateCategories;
         private PictureBox pbDeleteExpenseCategory;
         private PictureBox pbAddExpenseCategory;
         private PictureBox pbAddIncomeCategory;
         private PictureBox pbDeleteIncomeCategory;
+        private PictureBox pbEditExpenseCategory;
+        private TextBox txtNewTitle;
+        private Label lblNewTitle;
+        private PictureBox pbEditIncomeCategory;
     }
 }

@@ -103,5 +103,111 @@ namespace Курсовая_работа.Forms
 
             RenderListOfCategories();
         }
+
+        private void pbEditExpenseCategory_Click(object sender, EventArgs e)
+        {
+            if (lstExpenseCategories.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите категорию!");
+                return;
+            }
+            string categoryInString = lstExpenseCategories.SelectedItem.ToString();
+            ExpenseCategory category = user.ExpenseCategories.FirstOrDefault(x => x.Title == categoryInString);
+            if (category == null)
+            {
+                MessageBox.Show("Выберите категорию!");
+                return;
+            }
+
+            if (!txtNewTitle.Visible)
+            {
+                txtNewTitle.Text = categoryInString;
+                txtNewTitle.Focus();
+            }
+            else
+            {
+                string title = txtNewTitle.Text;
+                if(string.IsNullOrWhiteSpace(title))
+                {
+                    MessageBox.Show("Новое название не может быть пустым!");
+                    txtNewTitle.Text = string.Empty;
+                    txtNewTitle.Visible = !txtNewTitle.Visible;
+                    lblNewTitle.Visible = !lblNewTitle.Visible;
+                    return;
+                }
+
+                var currentCategory = user.ExpenseCategories.FirstOrDefault(x => x.Title == title);
+                if (currentCategory != null)
+                {
+                    MessageBox.Show("Такая категория уже есть!");
+                    txtNewTitle.Text = string.Empty;
+                    txtNewTitle.Visible = !txtNewTitle.Visible;
+                    lblNewTitle.Visible = !lblNewTitle.Visible;
+                    return;
+                }
+                else
+                {
+                    category.Title = title;
+                    txtNewTitle.Text = string.Empty;
+                    RenderListOfCategories();
+                }
+            }
+
+            txtNewTitle.Visible = !txtNewTitle.Visible;
+            lblNewTitle.Visible = !lblNewTitle.Visible;
+        }
+
+        private void pbEditIncomeCategory_Click(object sender, EventArgs e)
+        {
+            if (lstIncomeCategories.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите категорию!");
+                return;
+            }
+            string categoryInString = lstIncomeCategories.SelectedItem.ToString();
+            IncomeCategory category = user.IncomesCategories.FirstOrDefault(x => x.Title == categoryInString);
+            if (category == null)
+            {
+                MessageBox.Show("Выберите категорию!");
+                return;
+            }
+
+            if (!txtNewTitle.Visible)
+            {
+                txtNewTitle.Text = categoryInString;
+                txtNewTitle.Focus();
+            }
+            else
+            {
+                string title = txtNewTitle.Text;
+                if (string.IsNullOrWhiteSpace(title))
+                {
+                    MessageBox.Show("Новое название не может быть пустым!");
+                    txtNewTitle.Text = string.Empty;
+                    txtNewTitle.Visible = !txtNewTitle.Visible;
+                    lblNewTitle.Visible = !lblNewTitle.Visible;
+                    return;
+                }
+
+                var currentCategory = user.IncomesCategories.FirstOrDefault(x => x.Title == title);
+                if (currentCategory != null)
+                {
+                    MessageBox.Show("Такая категория уже есть!");
+                    txtNewTitle.Text = string.Empty;
+                    txtNewTitle.Visible = !txtNewTitle.Visible;
+                    lblNewTitle.Visible = !lblNewTitle.Visible;
+                    return;
+                }
+                else
+                {
+                    category.Title = title;
+                    txtNewTitle.Text = string.Empty;
+                    RenderListOfCategories();
+                }
+            }
+
+            txtNewTitle.Visible = !txtNewTitle.Visible;
+            lblNewTitle.Visible = !lblNewTitle.Visible;
+        }
     }
 }
