@@ -70,11 +70,16 @@ namespace Курсовая_работа.Forms
                 return;
             }
 
-            DialogResult result = MessageBox.Show($"Вы уверены, что хотите удалить категорию\"{category.Title}\"?",
+            DialogResult result = MessageBox.Show($"Вы уверены, что хотите удалить категорию\"{category.Title}\"?\n" +
+                $"Расходы по этой категории перейдут в категорию \"Другое\"",
                 "Удаление", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
+            {
+                ExpenseCategory otherCategory = user.ExpenseCategories.FirstOrDefault(x => x.Title == "Другое");
+                user.Expenses.Where(x => x.Category == category).ToList().ForEach(x => x.Category = otherCategory);
                 user.ExpenseCategories.Remove(category);
+            }
 
             RenderListOfCategories();
         }
@@ -114,11 +119,16 @@ namespace Курсовая_работа.Forms
                 return;
             }
 
-            DialogResult result = MessageBox.Show($"Вы уверены, что хотите удалить категорию\"{category.Title}\"?",
+            DialogResult result = MessageBox.Show($"Вы уверены, что хотите удалить категорию\"{category.Title}\"?\n" +
+                $"Доходы по этой категории перейдут в категорию \"Другое\"",
                 "Удаление", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
+            {
+                IncomeCategory otherCategory = user.IncomesCategories.FirstOrDefault(x => x.Title == "Другое");
+                user.Incomes.Where(x => x.Category == category).ToList().ForEach(x => x.Category = otherCategory);
                 user.IncomesCategories.Remove(category);
+            }
 
             RenderListOfCategories();
         }
