@@ -67,7 +67,9 @@ namespace Курсовая_работа.Forms
                 return;
             }
 
-            user.Expenses.Add(new(date, amount, category));
+            string description = txtDescriptionOfExpense.Text;
+
+            user.Expenses.Add(new(date, amount, category, description));
             //MessageBox.Show("Расход успешно добавлен");
             Close();
             mainForm.ShowBalance();

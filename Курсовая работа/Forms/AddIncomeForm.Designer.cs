@@ -37,14 +37,18 @@
             groupBox2 = new GroupBox();
             lstIncomeCategories = new ListBox();
             btnAddIncome = new Button();
+            groupBox5 = new GroupBox();
+            txtDescriptionOfIncome = new TextBox();
             groupBox1.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
+            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(groupBox5);
             groupBox1.Controls.Add(btnAddIncomeCategory);
             groupBox1.Controls.Add(groupBox4);
             groupBox1.Controls.Add(groupBox3);
@@ -53,7 +57,7 @@
             groupBox1.Font = new Font("Calibri", 14.25F, FontStyle.Bold);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(417, 366);
+            groupBox1.Size = new Size(417, 482);
             groupBox1.TabIndex = 20;
             groupBox1.TabStop = false;
             groupBox1.Text = "Добавить доход";
@@ -62,7 +66,7 @@
             // 
             btnAddIncomeCategory.BackColor = Color.LightGoldenrodYellow;
             btnAddIncomeCategory.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            btnAddIncomeCategory.Location = new Point(272, 311);
+            btnAddIncomeCategory.Location = new Point(272, 441);
             btnAddIncomeCategory.Name = "btnAddIncomeCategory";
             btnAddIncomeCategory.Size = new Size(132, 35);
             btnAddIncomeCategory.TabIndex = 23;
@@ -125,14 +129,14 @@
             lstIncomeCategories.ItemHeight = 18;
             lstIncomeCategories.Location = new Point(6, 25);
             lstIncomeCategories.Name = "lstIncomeCategories";
-            lstIncomeCategories.Size = new Size(358, 112);
+            lstIncomeCategories.Size = new Size(358, 130);
             lstIncomeCategories.TabIndex = 12;
             // 
             // btnAddIncome
             // 
             btnAddIncome.BackColor = Color.LightGoldenrodYellow;
             btnAddIncome.Font = new Font("Calibri", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            btnAddIncome.Location = new Point(16, 311);
+            btnAddIncome.Location = new Point(16, 441);
             btnAddIncome.Name = "btnAddIncome";
             btnAddIncome.Size = new Size(167, 35);
             btnAddIncome.TabIndex = 18;
@@ -140,12 +144,31 @@
             btnAddIncome.UseVisualStyleBackColor = false;
             btnAddIncome.Click += btnAddIncome_Click;
             // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(txtDescriptionOfIncome);
+            groupBox5.Font = new Font("Calibri", 11.25F);
+            groupBox5.Location = new Point(16, 311);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(388, 124);
+            groupBox5.TabIndex = 24;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Введите описание";
+            // 
+            // txtDescriptionOfIncome
+            // 
+            txtDescriptionOfIncome.Location = new Point(6, 25);
+            txtDescriptionOfIncome.Multiline = true;
+            txtDescriptionOfIncome.Name = "txtDescriptionOfIncome";
+            txtDescriptionOfIncome.Size = new Size(358, 82);
+            txtDescriptionOfIncome.TabIndex = 0;
+            // 
             // AddIncomeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightYellow;
-            ClientSize = new Size(445, 389);
+            ClientSize = new Size(445, 506);
             Controls.Add(groupBox1);
             Name = "AddIncomeForm";
             Text = "Добавление дохода";
@@ -154,6 +177,8 @@
             groupBox4.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -168,5 +193,7 @@
         private GroupBox groupBox3;
         private GroupBox groupBox2;
         private Button btnAddIncomeCategory;
+        private GroupBox groupBox5;
+        private TextBox txtDescriptionOfIncome;
     }
 }

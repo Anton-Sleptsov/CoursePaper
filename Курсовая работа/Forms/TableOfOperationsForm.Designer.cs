@@ -39,7 +39,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 12);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(346, 323);
+            dataGridView1.Size = new Size(539, 323);
             dataGridView1.TabIndex = 0;
             // 
             // TableOfOperationsForm
@@ -47,7 +47,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightYellow;
-            ClientSize = new Size(368, 450);
+            ClientSize = new Size(563, 450);
             Controls.Add(dataGridView1);
             Name = "TableOfOperationsForm";
             Text = "Список операций";

@@ -68,7 +68,9 @@ namespace Курсовая_работа
                 return;
             }
 
-            user.Incomes.Add(new(date, amount, category));
+            string description = txtDescriptionOfIncome.Text;
+
+            user.Incomes.Add(new(date, amount, category, description));
             //MessageBox.Show("Доход успешно добавлен");
             Close();
             mainForm.ShowBalance();

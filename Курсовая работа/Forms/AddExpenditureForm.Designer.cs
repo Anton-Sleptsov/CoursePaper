@@ -37,14 +37,18 @@
             groupBox2 = new GroupBox();
             lstExpenseCategories = new ListBox();
             btnAddExpense = new Button();
+            groupBox5 = new GroupBox();
+            txtDescriptionOfExpense = new TextBox();
             groupBox1.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
+            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(groupBox5);
             groupBox1.Controls.Add(btnAddExpenseCategory);
             groupBox1.Controls.Add(groupBox4);
             groupBox1.Controls.Add(groupBox3);
@@ -53,7 +57,7 @@
             groupBox1.Font = new Font("Calibri", 14.25F, FontStyle.Bold);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(417, 366);
+            groupBox1.Size = new Size(417, 488);
             groupBox1.TabIndex = 20;
             groupBox1.TabStop = false;
             groupBox1.Text = "Добавить расход";
@@ -62,7 +66,7 @@
             // 
             btnAddExpenseCategory.BackColor = Color.LightGoldenrodYellow;
             btnAddExpenseCategory.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            btnAddExpenseCategory.Location = new Point(272, 311);
+            btnAddExpenseCategory.Location = new Point(272, 441);
             btnAddExpenseCategory.Name = "btnAddExpenseCategory";
             btnAddExpenseCategory.Size = new Size(132, 35);
             btnAddExpenseCategory.TabIndex = 22;
@@ -125,14 +129,14 @@
             lstExpenseCategories.ItemHeight = 18;
             lstExpenseCategories.Location = new Point(6, 25);
             lstExpenseCategories.Name = "lstExpenseCategories";
-            lstExpenseCategories.Size = new Size(358, 112);
+            lstExpenseCategories.Size = new Size(358, 130);
             lstExpenseCategories.TabIndex = 12;
             // 
             // btnAddExpense
             // 
             btnAddExpense.BackColor = Color.LightGoldenrodYellow;
             btnAddExpense.Font = new Font("Calibri", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            btnAddExpense.Location = new Point(16, 311);
+            btnAddExpense.Location = new Point(16, 441);
             btnAddExpense.Name = "btnAddExpense";
             btnAddExpense.Size = new Size(167, 35);
             btnAddExpense.TabIndex = 18;
@@ -140,12 +144,31 @@
             btnAddExpense.UseVisualStyleBackColor = false;
             btnAddExpense.Click += btnAddExpense_Click;
             // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(txtDescriptionOfExpense);
+            groupBox5.Font = new Font("Calibri", 11.25F);
+            groupBox5.Location = new Point(16, 311);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(388, 124);
+            groupBox5.TabIndex = 25;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Введите описание";
+            // 
+            // txtDescriptionOfExpense
+            // 
+            txtDescriptionOfExpense.Location = new Point(6, 25);
+            txtDescriptionOfExpense.Multiline = true;
+            txtDescriptionOfExpense.Name = "txtDescriptionOfExpense";
+            txtDescriptionOfExpense.Size = new Size(358, 82);
+            txtDescriptionOfExpense.TabIndex = 0;
+            // 
             // AddExpenditureForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightYellow;
-            ClientSize = new Size(445, 389);
+            ClientSize = new Size(445, 506);
             Controls.Add(groupBox1);
             Name = "AddExpenditureForm";
             Text = "Добавление расхода";
@@ -154,6 +177,8 @@
             groupBox4.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -168,5 +193,7 @@
         private GroupBox groupBox3;
         private GroupBox groupBox2;
         private Button btnAddExpenseCategory;
+        private GroupBox groupBox5;
+        private TextBox txtDescriptionOfExpense;
     }
 }

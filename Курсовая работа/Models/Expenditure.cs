@@ -2,6 +2,6 @@
 {
     internal class Expenditure : Operation
     {
-        public Expenditure(DateTime date, decimal amount, ExpenseCategory category) : base(date, amount, category) { }
+        public Expenditure(DateTime date, decimal amount, ExpenseCategory category,string description) : base(date, amount, category, description) { }
     }
 }

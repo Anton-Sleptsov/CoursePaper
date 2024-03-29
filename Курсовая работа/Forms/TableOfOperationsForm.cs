@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using Курсовая_работа.Models;
 
 namespace Курсовая_работа.Forms
@@ -20,22 +21,20 @@ namespace Курсовая_работа.Forms
             table.Columns.Add("Дата", typeof(DateTime));
             table.Columns.Add("Категория", typeof(string));
             table.Columns.Add("Сумма", typeof(decimal));
+            table.Columns.Add("Описание", typeof(string));
 
-            List<Operation> allOperations = [.. user.Incomes];
-
-            foreach (var expenditure in user.Expenses)
-            {
-                if(expenditure.Amount >= 0)
-                    expenditure.Amount = -expenditure.Amount;
-
-                allOperations.Add(expenditure);
-            }
+            List<Operation> allOperations = [.. user.Incomes, .. user.Expenses];
 
             var orderedList = allOperations.OrderByDescending(op => op.Date).ToList();
 
-            for (int i = 0; i < orderedList.Count; i++)
-                table.Rows.Add(orderedList[i].Date, orderedList[i].Category.ToString(), orderedList[i].Amount);
-
+            foreach (var item in orderedList)
+            {
+                if(item.GetType() == typeof(Expenditure))
+                    table.Rows.Add(item.Date, item.Category.ToString(), -item.Amount, item.Description);
+                else
+                    table.Rows.Add(item.Date, item.Category.ToString(), item.Amount, item.Description);
+            }
+            
             dataGridView1.DataSource = table;
         }
     }
