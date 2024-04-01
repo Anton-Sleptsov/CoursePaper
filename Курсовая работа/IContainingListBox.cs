@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Курсовая_работа
 {
-    public interface IContainingListOfCategories
+    public interface IContainingListBox
     {
-        void RenderListOfCategories();
+        void RenderListBox();
     }
 }

@@ -35,6 +35,7 @@
             btnOpenAddIncomeForm = new Button();
             btnAllCategories = new Button();
             btnTableOfOperations = new Button();
+            btnEditOperations = new Button();
             ((System.ComponentModel.ISupportInitialize)pbEdit).BeginInit();
             SuspendLayout();
             // 
@@ -109,7 +110,7 @@
             // 
             btnTableOfOperations.BackColor = Color.LightGoldenrodYellow;
             btnTableOfOperations.Font = new Font("Calibri", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            btnTableOfOperations.Location = new Point(12, 225);
+            btnTableOfOperations.Location = new Point(12, 271);
             btnTableOfOperations.Name = "btnTableOfOperations";
             btnTableOfOperations.Size = new Size(207, 35);
             btnTableOfOperations.TabIndex = 22;
@@ -117,12 +118,25 @@
             btnTableOfOperations.UseVisualStyleBackColor = false;
             btnTableOfOperations.Click += btnTableOfOperations_Click;
             // 
+            // btnEditOperations
+            // 
+            btnEditOperations.BackColor = Color.LightGoldenrodYellow;
+            btnEditOperations.Font = new Font("Calibri", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btnEditOperations.Location = new Point(12, 224);
+            btnEditOperations.Name = "btnEditOperations";
+            btnEditOperations.Size = new Size(207, 35);
+            btnEditOperations.TabIndex = 23;
+            btnEditOperations.Text = "Редактировать операции";
+            btnEditOperations.UseVisualStyleBackColor = false;
+            btnEditOperations.Click += btnEditOperations_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightYellow;
             ClientSize = new Size(315, 318);
+            Controls.Add(btnEditOperations);
             Controls.Add(btnTableOfOperations);
             Controls.Add(btnAllCategories);
             Controls.Add(btnOpenAddIncomeForm);
@@ -146,5 +160,6 @@
         private Button btnOpenAddIncomeForm;
         private Button btnAllCategories;
         private Button btnTableOfOperations;
+        private Button btnEditOperations;
     }
 }

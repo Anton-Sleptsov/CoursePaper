@@ -15,8 +15,8 @@ namespace Курсовая_работа.Forms
     {
         private readonly User user;
         private readonly TypeOfCategory typeOfCategory;
-        private readonly IContainingListOfCategories form;
-        internal AddingCategoryForm(User user, TypeOfCategory typeOfCategory, IContainingListOfCategories form)
+        private readonly IContainingListBox form;
+        internal AddingCategoryForm(User user, TypeOfCategory typeOfCategory, IContainingListBox form)
         {
             InitializeComponent();
             this.user = user;
@@ -50,7 +50,7 @@ namespace Курсовая_работа.Forms
                     txtTitleOfCategory.Text = string.Empty;
                     //MessageBox.Show("Категория добавлена");
                     Close();
-                    form.RenderListOfCategories();
+                    form.RenderListBox();
                 }
             }
             else if (typeOfCategory == TypeOfCategory.Expenditure)
@@ -69,7 +69,7 @@ namespace Курсовая_работа.Forms
                     txtTitleOfCategory.Text = string.Empty;
                     //MessageBox.Show("Категория добавлена");
                     Close();
-                    form.RenderListOfCategories();
+                    form.RenderListBox();
                 }
             }
 

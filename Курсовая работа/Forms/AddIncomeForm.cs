@@ -3,7 +3,7 @@ using Курсовая_работа.Models;
 
 namespace Курсовая_работа
 {
-    public partial class AddIncomeForm : Form, IContainingListOfCategories
+    public partial class AddIncomeForm : Form, IContainingListBox
     {
         private readonly User user;
         private readonly MainForm mainForm;
@@ -16,10 +16,10 @@ namespace Курсовая_работа
             this.mainForm = mainForm;
             dateOfIncome.Value = DateTime.Now;
 
-            RenderListOfCategories();
+            RenderListBox();
         }
 
-        public void RenderListOfCategories()
+        public void RenderListBox()
         {
             lstIncomeCategories.Items.Clear();
             foreach (var item in user.IncomesCategories)

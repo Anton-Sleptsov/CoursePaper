@@ -11,7 +11,7 @@ using Курсовая_работа.Models;
 
 namespace Курсовая_работа.Forms
 {
-    public partial class AllCategoriesForm : Form, IContainingListOfCategories
+    public partial class AllCategoriesForm : Form, IContainingListBox
     {
         private readonly User user;
 
@@ -21,10 +21,10 @@ namespace Курсовая_работа.Forms
 
             this.user = user;
 
-            RenderListOfCategories();
+            RenderListBox();
         }
 
-        public void RenderListOfCategories()
+        public void RenderListBox()
         {
             lstIncomeCategories.Items.Clear();
             foreach (var item in user.IncomesCategories)
@@ -81,7 +81,7 @@ namespace Курсовая_работа.Forms
                 user.ExpenseCategories.Remove(category);
             }
 
-            RenderListOfCategories();
+            RenderListBox();
         }
 
         private void pbAddIncomeCategory_Click(object sender, EventArgs e)
@@ -130,7 +130,7 @@ namespace Курсовая_работа.Forms
                 user.IncomesCategories.Remove(category);
             }
 
-            RenderListOfCategories();
+            RenderListBox();
         }
 
         private void pbEditExpenseCategory_Click(object sender, EventArgs e)
@@ -178,7 +178,7 @@ namespace Курсовая_работа.Forms
                 {
                     category.Title = title;
                     txtNewTitleExpenseCategory.Text = string.Empty;
-                    RenderListOfCategories();
+                    RenderListBox();
                 }
             }
 
@@ -231,7 +231,7 @@ namespace Курсовая_работа.Forms
                 {
                     category.Title = title;
                     txtNewTitleIncomeCategory.Text = string.Empty;
-                    RenderListOfCategories();
+                    RenderListBox();
                 }
             }
 

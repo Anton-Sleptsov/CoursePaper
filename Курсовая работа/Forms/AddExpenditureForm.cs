@@ -2,7 +2,7 @@
 
 namespace Курсовая_работа.Forms
 {
-    public partial class AddExpenditureForm : Form, IContainingListOfCategories
+    public partial class AddExpenditureForm : Form, IContainingListBox
     {
         private readonly User user;
         private readonly MainForm mainForm;
@@ -15,10 +15,10 @@ namespace Курсовая_работа.Forms
             this.mainForm = mainForm;
             dateOfExpenditure.Value = DateTime.Now;
 
-            RenderListOfCategories();
+            RenderListBox();
         }
 
-        public void RenderListOfCategories()
+        public void RenderListBox()
         {
             lstExpenseCategories.Items.Clear();
             foreach (var item in user.ExpenseCategories)
