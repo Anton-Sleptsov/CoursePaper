@@ -78,6 +78,7 @@
             pbEditExpense.SizeMode = PictureBoxSizeMode.StretchImage;
             pbEditExpense.TabIndex = 16;
             pbEditExpense.TabStop = false;
+            pbEditExpense.Click += pbEditExpense_Click;
             // 
             // pbDeleteExpense
             // 
@@ -121,6 +122,7 @@
             pbEditIncome.SizeMode = PictureBoxSizeMode.StretchImage;
             pbEditIncome.TabIndex = 18;
             pbEditIncome.TabStop = false;
+            pbEditIncome.Click += pbEditIncome_Click;
             // 
             // pbDeleteIncome
             // 
