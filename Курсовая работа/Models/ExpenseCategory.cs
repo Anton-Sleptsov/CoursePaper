@@ -1,4 +1,4 @@
-﻿namespace Курсовая_работа.Models
+﻿namespace CoursePaper.Models
 {
     internal class ExpenseCategory(string title) : Category
     {

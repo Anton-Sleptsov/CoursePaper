@@ -1,7 +1,7 @@
-﻿using Курсовая_работа.Forms;
-using Курсовая_работа.Models;
+﻿using CoursePaper.Forms;
+using CoursePaper.Models;
 
-namespace Курсовая_работа
+namespace CoursePaper
 {
     public partial class AddIncomeForm : Form, IContainingListBox
     {
@@ -71,7 +71,6 @@ namespace Курсовая_работа
             string description = txtDescriptionOfIncome.Text;
 
             user.Incomes.Add(new(date, amount, category, description));
-            //MessageBox.Show("Доход успешно добавлен");
             Close();
             mainForm.ShowBalance();
         }

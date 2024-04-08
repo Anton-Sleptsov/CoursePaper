@@ -1,7 +1,7 @@
-using Курсовая_работа.Forms;
-using Курсовая_работа.Models;
+using CoursePaper.Forms;
+using CoursePaper.Models;
 
-namespace Курсовая_работа
+namespace CoursePaper
 {
     public partial class MainForm : Form
     {

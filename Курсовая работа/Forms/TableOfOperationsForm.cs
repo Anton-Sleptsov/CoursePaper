@@ -1,8 +1,7 @@
 ﻿using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using Курсовая_работа.Models;
+using CoursePaper.Models;
 
-namespace Курсовая_работа.Forms
+namespace CoursePaper.Forms
 {
     public partial class TableOfOperationsForm : Form
     {

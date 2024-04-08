@@ -1,4 +1,4 @@
-﻿namespace Курсовая_работа.Forms
+﻿namespace CoursePaper.Forms
 {
     partial class AddingCategoryForm
     {

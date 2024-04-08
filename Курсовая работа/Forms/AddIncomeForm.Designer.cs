@@ -1,4 +1,4 @@
-﻿namespace Курсовая_работа
+﻿namespace CoursePaper
 {
     partial class AddIncomeForm
     {

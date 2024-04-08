@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Курсовая_работа.Models;
+﻿using CoursePaper.Models;
 
-namespace Курсовая_работа.Forms
+namespace CoursePaper.Forms
 {
     public partial class AddingCategoryForm : Form
     {
@@ -48,7 +39,6 @@ namespace Курсовая_работа.Forms
                 {
                     user.IncomesCategories.Add(new(title));
                     txtTitleOfCategory.Text = string.Empty;
-                    //MessageBox.Show("Категория добавлена");
                     Close();
                     form.RenderListBox();
                 }
@@ -67,7 +57,6 @@ namespace Курсовая_работа.Forms
                 {
                     user.ExpenseCategories.Add(new(title));
                     txtTitleOfCategory.Text = string.Empty;
-                    //MessageBox.Show("Категория добавлена");
                     Close();
                     form.RenderListBox();
                 }

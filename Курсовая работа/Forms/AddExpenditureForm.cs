@@ -1,6 +1,6 @@
-﻿using Курсовая_работа.Models;
+﻿using CoursePaper.Models;
 
-namespace Курсовая_работа.Forms
+namespace CoursePaper.Forms
 {
     public partial class AddExpenditureForm : Form, IContainingListBox
     {
@@ -70,7 +70,6 @@ namespace Курсовая_работа.Forms
             string description = txtDescriptionOfExpense.Text;
 
             user.Expenses.Add(new(date, amount, category, description));
-            //MessageBox.Show("Расход успешно добавлен");
             Close();
             mainForm.ShowBalance();
         }

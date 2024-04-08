@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Курсовая_работа.Properties {
+namespace CoursePaper.Properties {
     using System;
     
     

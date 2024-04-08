@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Курсовая_работа.Models;
+﻿using System.Data;
+using CoursePaper.Models;
 
-namespace Курсовая_работа.Forms
+namespace CoursePaper.Forms
 {
     public partial class AllCategoriesForm : Form, IContainingListBox
     {
