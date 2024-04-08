@@ -1,15 +1,17 @@
 using CoursePaper.Forms;
 using CoursePaper.Models;
+using Курсовая_работа;
 
 namespace CoursePaper
 {
     public partial class MainForm : Form
     {
-        User user = new();
+        readonly User user = SerializableSaver.Load<User>() ?? new();
 
         public MainForm()
         {
             InitializeComponent();
+            ShowBalance();
         }
 
         public void ShowBalance()
@@ -104,6 +106,11 @@ namespace CoursePaper
 
             AllOperationsForm allOperationsForm = new(user, this);
             allOperationsForm.Show();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SerializableSaver.Save(user);
         }
     }
 }

@@ -146,6 +146,7 @@
             Controls.Add(lblBalance);
             Name = "MainForm";
             Text = "Личный бюджет";
+            FormClosing += MainForm_FormClosing;
             ((System.ComponentModel.ISupportInitialize)pbEdit).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -1,12 +1,7 @@
 ﻿namespace CoursePaper.Models
 {
-    internal class IncomeCategory(string title) : Category
+    internal class IncomeCategory : Category
     {
-        public string Title { get; set; } = title;
-
-        public override string ToString()
-        {
-            return Title;
-        }
+        public IncomeCategory(string title) : base(title) { }
     }
 }

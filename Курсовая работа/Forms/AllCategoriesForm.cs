@@ -69,7 +69,7 @@ namespace CoursePaper.Forms
             if (result == DialogResult.Yes)
             {
                 ExpenseCategory otherCategory = user.ExpenseCategories.FirstOrDefault(x => x.Title == "Другое");
-                user.Expenses.Where(x => x.Category == category).ToList().ForEach(x => x.Category = otherCategory);
+                user.Expenses.Where(x => x.Category.Title == category.Title).ToList().ForEach(x => x.Category = otherCategory);
                 user.ExpenseCategories.Remove(category);
             }
 
@@ -118,7 +118,7 @@ namespace CoursePaper.Forms
             if (result == DialogResult.Yes)
             {
                 IncomeCategory otherCategory = user.IncomesCategories.FirstOrDefault(x => x.Title == "Другое");
-                user.Incomes.Where(x => x.Category == category).ToList().ForEach(x => x.Category = otherCategory);
+                user.Incomes.Where(x => x.Category.Title == category.Title).ToList().ForEach(x => x.Category = otherCategory);
                 user.IncomesCategories.Remove(category);
             }
 

@@ -1,7 +1,10 @@
-﻿namespace CoursePaper.Models
+﻿using System.Text.Json.Serialization;
+
+namespace CoursePaper.Models
 {
     internal class User
     {
+        [JsonIgnore]
         public decimal Balance
         {
             get
@@ -15,6 +18,7 @@
         public List<ExpenseCategory> ExpenseCategories { get; set; }
         public List<IncomeCategory> IncomesCategories { get; set; }
         public decimal UserAllowance { get; set; }
+        [JsonIgnore]
         public decimal AmountOfExpensesAndIncomes
         {
             get

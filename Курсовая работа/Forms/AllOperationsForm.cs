@@ -47,7 +47,7 @@ namespace CoursePaper.Forms
                                                          x.Date.Hour == dateTime.Hour &&
                                                          x.Date.Minute == dateTime.Minute &&
                                                          x.Date.Second == dateTime.Second &&
-                                                         x.Category == category &&
+                                                         x.Category.Title == category.Title &&
                                                          x.Amount == amount);
 
             if (operation == null)
@@ -81,7 +81,7 @@ namespace CoursePaper.Forms
                                                          x.Date.Hour == dateTime.Hour &&
                                                          x.Date.Minute == dateTime.Minute &&
                                                          x.Date.Second == dateTime.Second &&
-                                                         x.Category == category &&
+                                                         x.Category.Title == category.Title &&
                                                          x.Amount == amount);
 
             if (operation == null)
@@ -115,7 +115,7 @@ namespace CoursePaper.Forms
                                                          x.Date.Hour == dateTime.Hour &&
                                                          x.Date.Minute == dateTime.Minute &&
                                                          x.Date.Second == dateTime.Second &&
-                                                         x.Category == category &&
+                                                         x.Category.Title == category.Title &&
                                                          x.Amount == amount);
 
             if (operation == null)
@@ -147,7 +147,7 @@ namespace CoursePaper.Forms
                                                          x.Date.Hour == dateTime.Hour &&
                                                          x.Date.Minute == dateTime.Minute &&
                                                          x.Date.Second == dateTime.Second &&
-                                                         x.Category == category &&
+                                                         x.Category.Title == category.Title &&
                                                          x.Amount == amount);
 
             if (operation == null)
