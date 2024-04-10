@@ -29,7 +29,7 @@ namespace CoursePaper
         private void btnAddIncomeCategory_Click(object sender, EventArgs e)
         {
             AddingCategoryForm addingCategory = new(user, TypeOfCategory.Income, this);
-            addingCategory.Show();
+            addingCategory.ShowDialog();
         }
 
         private void btnAddIncome_Click(object sender, EventArgs e)

@@ -28,7 +28,7 @@ namespace CoursePaper.Forms
         private void btnAddExpenseCategory_Click(object sender, EventArgs e)
         {
             AddingCategoryForm addingCategory = new(user, TypeOfCategory.Expenditure, this);
-            addingCategory.Show();
+            addingCategory.ShowDialog();
         }
 
         private void btnAddExpense_Click(object sender, EventArgs e)

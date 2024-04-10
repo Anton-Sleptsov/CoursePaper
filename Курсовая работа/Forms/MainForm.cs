@@ -38,7 +38,7 @@ namespace CoursePaper
             }
 
             AddExpenditureForm addExpenditureForm = new(user, this);
-            addExpenditureForm.Show();
+            addExpenditureForm.ShowDialog();
         }
 
         private void btnOpenAddIncomeForm_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace CoursePaper
             }
 
             AddIncomeForm addIncomeForm = new(user, this);
-            addIncomeForm.Show();
+            addIncomeForm.ShowDialog();
         }
 
         private void pbEdit_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace CoursePaper
             }
 
             AllCategoriesForm allCategoriesForm = new(user);
-            allCategoriesForm.Show();
+            allCategoriesForm.ShowDialog();
         }
 
         private void btnTableOfOperations_Click(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace CoursePaper
             }
 
             TableOfOperationsForm tableOfOperationsForm = new(user);
-            tableOfOperationsForm.Show();
+            tableOfOperationsForm.ShowDialog();
         }
 
         private void btnEditOperations_Click(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace CoursePaper
             }
 
             AllOperationsForm allOperationsForm = new(user, this);
-            allOperationsForm.Show();
+            allOperationsForm.ShowDialog();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

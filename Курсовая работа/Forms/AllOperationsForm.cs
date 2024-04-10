@@ -125,7 +125,7 @@ namespace CoursePaper.Forms
             }
 
             EditOperationForm editOperationForm = new(this, mainForm, user, operation, TypeOfCategory.Expenditure);
-            editOperationForm.Show();
+            editOperationForm.ShowDialog();
         }
 
         private void pbEditIncome_Click(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace CoursePaper.Forms
             }
 
             EditOperationForm editOperationForm = new(this, mainForm, user, operation, TypeOfCategory.Income);
-            editOperationForm.Show();
+            editOperationForm.ShowDialog();
         }
     }
 }

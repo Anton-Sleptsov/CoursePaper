@@ -29,9 +29,9 @@ namespace CoursePaper.Forms
             foreach (var item in orderedList)
             {
                 if(item.GetType() == typeof(Expenditure))
-                    table.Rows.Add(item.Date, item.Category.ToString(), -item.Amount, item.Description);
+                    table.Rows.Add(item.Date.ToShortDateString(), item.Category.ToString(), -item.Amount, item.Description);
                 else
-                    table.Rows.Add(item.Date, item.Category.ToString(), item.Amount, item.Description);
+                    table.Rows.Add(item.Date.ToShortDateString(), item.Category.ToString(), item.Amount, item.Description);
             }
             
             dataGridView1.DataSource = table;

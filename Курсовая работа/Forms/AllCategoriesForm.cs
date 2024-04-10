@@ -36,7 +36,7 @@ namespace CoursePaper.Forms
             }
 
             AddingCategoryForm addingCategory = new(user, TypeOfCategory.Expenditure, this);
-            addingCategory.Show();
+            addingCategory.ShowDialog();
         }
 
         private void pbDeleteExpenseCategory_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace CoursePaper.Forms
             }
 
             AddingCategoryForm addingCategory = new(user, TypeOfCategory.Income, this);
-            addingCategory.Show();
+            addingCategory.ShowDialog();
         }
 
         private void pbDeleteIncomeCategory_Click(object sender, EventArgs e)
