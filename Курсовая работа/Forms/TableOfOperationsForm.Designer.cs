@@ -33,6 +33,8 @@
             groupBox1 = new GroupBox();
             radioAllOperations = new RadioButton();
             radioIncomes = new RadioButton();
+            label1 = new Label();
+            lblTotalAmount = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -65,7 +67,7 @@
             groupBox1.Controls.Add(radioAllOperations);
             groupBox1.Controls.Add(radioIncomes);
             groupBox1.Controls.Add(radioExpenses);
-            groupBox1.Location = new Point(25, 360);
+            groupBox1.Location = new Point(12, 389);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(225, 54);
             groupBox1.TabIndex = 2;
@@ -96,12 +98,34 @@
             radioIncomes.UseVisualStyleBackColor = true;
             radioIncomes.CheckedChanged += radioIncomes_CheckedChanged;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label1.Location = new Point(404, 355);
+            label1.Name = "label1";
+            label1.Size = new Size(61, 25);
+            label1.TabIndex = 3;
+            label1.Text = "Итог:";
+            // 
+            // lblTotalAmount
+            // 
+            lblTotalAmount.AutoSize = true;
+            lblTotalAmount.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            lblTotalAmount.Location = new Point(471, 355);
+            lblTotalAmount.Name = "lblTotalAmount";
+            lblTotalAmount.Size = new Size(23, 25);
+            lblTotalAmount.TabIndex = 4;
+            lblTotalAmount.Text = "0";
+            // 
             // TableOfOperationsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightYellow;
-            ClientSize = new Size(563, 450);
+            ClientSize = new Size(563, 497);
+            Controls.Add(lblTotalAmount);
+            Controls.Add(label1);
             Controls.Add(groupBox1);
             Controls.Add(dataGridView1);
             Name = "TableOfOperationsForm";
@@ -111,6 +135,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -120,5 +145,7 @@
         private GroupBox groupBox1;
         private RadioButton radioAllOperations;
         private RadioButton radioIncomes;
+        private Label label1;
+        private Label lblTotalAmount;
     }
 }

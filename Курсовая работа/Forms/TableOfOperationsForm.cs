@@ -16,6 +16,8 @@ namespace CoursePaper.Forms
 
         private void TableOfOperationsForm_Load(object sender, EventArgs e)
         {
+            decimal totalAmount = 0;
+
             DataTable table = new();
             table.Columns.Add("Дата", typeof(DateTime));
             table.Columns.Add("Категория", typeof(string));
@@ -23,6 +25,14 @@ namespace CoursePaper.Forms
             table.Columns.Add("Описание", typeof(string));
 
             List<Operation> allOperations = GetAllRenderingOperations();
+
+            foreach (var item in allOperations)
+            {
+                if (item.GetType() == typeof(Expenditure))
+                    totalAmount -= item.Amount;
+                else
+                    totalAmount += item.Amount;
+            }
 
             var orderedList = allOperations.OrderByDescending(op => op.Date).ToList();
 
@@ -35,6 +45,14 @@ namespace CoursePaper.Forms
             }
 
             dataGridView1.DataSource = table;
+
+            lblTotalAmount.Text = totalAmount.ToString();
+
+            if (totalAmount < 0)
+                lblTotalAmount.ForeColor = Color.Red;
+            else
+                lblTotalAmount.ForeColor = Color.Black;
+
         }
 
         private void radioExpenses_CheckedChanged(object sender, EventArgs e) => TableOfOperationsForm_Load(null, null);    
