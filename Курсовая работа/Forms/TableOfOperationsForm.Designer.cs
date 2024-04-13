@@ -35,8 +35,11 @@
             radioIncomes = new RadioButton();
             label1 = new Label();
             lblTotalAmount = new Label();
+            cbCategories = new ComboBox();
+            gbCategories = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
+            gbCategories.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
@@ -118,12 +121,33 @@
             lblTotalAmount.TabIndex = 4;
             lblTotalAmount.Text = "0";
             // 
+            // cbCategories
+            // 
+            cbCategories.FormattingEnabled = true;
+            cbCategories.Location = new Point(6, 18);
+            cbCategories.Name = "cbCategories";
+            cbCategories.Size = new Size(164, 23);
+            cbCategories.TabIndex = 5;
+            cbCategories.SelectedIndexChanged += cbCategories_SelectedIndexChanged;
+            // 
+            // gbCategories
+            // 
+            gbCategories.Controls.Add(cbCategories);
+            gbCategories.Location = new Point(261, 389);
+            gbCategories.Name = "gbCategories";
+            gbCategories.Size = new Size(176, 54);
+            gbCategories.TabIndex = 6;
+            gbCategories.TabStop = false;
+            gbCategories.Text = "gbCategories";
+            gbCategories.Visible = false;
+            // 
             // TableOfOperationsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightYellow;
             ClientSize = new Size(563, 497);
+            Controls.Add(gbCategories);
             Controls.Add(lblTotalAmount);
             Controls.Add(label1);
             Controls.Add(groupBox1);
@@ -134,6 +158,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            gbCategories.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -147,5 +172,7 @@
         private RadioButton radioIncomes;
         private Label label1;
         private Label lblTotalAmount;
+        private ComboBox cbCategories;
+        private GroupBox gbCategories;
     }
 }
