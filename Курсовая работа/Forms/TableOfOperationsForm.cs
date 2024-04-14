@@ -17,7 +17,7 @@ namespace CoursePaper.Forms
         }
 
         private void TableOfOperationsForm_Load(object sender = null, EventArgs e = null)
-        {         
+        {
             decimal totalAmount = 0;
 
             DataTable table = new();
@@ -74,10 +74,10 @@ namespace CoursePaper.Forms
             foreach (var item in user.ExpenseCategories)
                 cbCategories.Items.Add(item);
 
-            TableOfOperationsForm_Load(); 
+            TableOfOperationsForm_Load();
         }
 
-        private void radioIncomes_CheckedChanged(object sender, EventArgs e) 
+        private void radioIncomes_CheckedChanged(object sender, EventArgs e)
         {
             gbCategories.Text = "Категории доходов";
             gbCategories.Visible = true;
@@ -101,12 +101,23 @@ namespace CoursePaper.Forms
         }
         private List<Operation> GetAllRenderingOperations()
         {
+            List<Operation> allOperations = new();
             if (radioExpenses.Checked)
-                return [.. user.Expenses];
+                allOperations = [.. user.Expenses];
             else if (radioIncomes.Checked)
-                return [.. user.Incomes];
+                allOperations = [.. user.Incomes];
             else
-                return [.. user.Incomes, .. user.Expenses];
+                allOperations = [.. user.Incomes, .. user.Expenses];
+
+            List<Operation> allOperationsWithTime = new();
+            if (radioThisMonth.Checked)
+                allOperationsWithTime = allOperations.Where(op => op.Date.Month == DateTime.Now.Month).ToList();
+            else if (radioThisYear.Checked)
+                allOperationsWithTime = allOperations.Where(op => op.Date.Year == DateTime.Now.Year).ToList();
+            else
+                allOperationsWithTime = allOperations;
+
+            return allOperationsWithTime;
         }
 
         private void cbCategories_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,5 +125,11 @@ namespace CoursePaper.Forms
             selectedCategoryInString = cbCategories.SelectedItem.ToString();
             TableOfOperationsForm_Load();
         }
+
+        private void radioAllTime_CheckedChanged(object sender, EventArgs e) => TableOfOperationsForm_Load();
+
+        private void radioThisMonth_CheckedChanged(object sender, EventArgs e) => TableOfOperationsForm_Load();
+
+        private void radioThisYear_CheckedChanged(object sender, EventArgs e) => TableOfOperationsForm_Load();
     }
 }

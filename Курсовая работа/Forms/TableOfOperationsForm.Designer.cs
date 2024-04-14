@@ -37,9 +37,14 @@
             lblTotalAmount = new Label();
             cbCategories = new ComboBox();
             gbCategories = new GroupBox();
+            groupBox2 = new GroupBox();
+            radioAllTime = new RadioButton();
+            radioThisMonth = new RadioButton();
+            radioThisYear = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             gbCategories.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
@@ -141,12 +146,60 @@
             gbCategories.Text = "gbCategories";
             gbCategories.Visible = false;
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(radioAllTime);
+            groupBox2.Controls.Add(radioThisMonth);
+            groupBox2.Controls.Add(radioThisYear);
+            groupBox2.Location = new Point(12, 463);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(425, 54);
+            groupBox2.TabIndex = 4;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Период отображения";
+            // 
+            // radioAllTime
+            // 
+            radioAllTime.AutoSize = true;
+            radioAllTime.Checked = true;
+            radioAllTime.Location = new Point(6, 22);
+            radioAllTime.Name = "radioAllTime";
+            radioAllTime.Size = new Size(96, 19);
+            radioAllTime.TabIndex = 3;
+            radioAllTime.TabStop = true;
+            radioAllTime.Text = "За всё время";
+            radioAllTime.UseVisualStyleBackColor = true;
+            radioAllTime.CheckedChanged += radioAllTime_CheckedChanged;
+            // 
+            // radioThisMonth
+            // 
+            radioThisMonth.AutoSize = true;
+            radioThisMonth.Location = new Point(293, 22);
+            radioThisMonth.Name = "radioThisMonth";
+            radioThisMonth.Size = new Size(126, 19);
+            radioThisMonth.TabIndex = 2;
+            radioThisMonth.Text = "За текущий месяц";
+            radioThisMonth.UseVisualStyleBackColor = true;
+            radioThisMonth.CheckedChanged += radioThisMonth_CheckedChanged;
+            // 
+            // radioThisYear
+            // 
+            radioThisYear.AutoSize = true;
+            radioThisYear.Location = new Point(148, 22);
+            radioThisYear.Name = "radioThisYear";
+            radioThisYear.Size = new Size(110, 19);
+            radioThisYear.TabIndex = 1;
+            radioThisYear.Text = "За текущий год";
+            radioThisYear.UseVisualStyleBackColor = true;
+            radioThisYear.CheckedChanged += radioThisYear_CheckedChanged;
+            // 
             // TableOfOperationsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightYellow;
-            ClientSize = new Size(563, 497);
+            ClientSize = new Size(563, 550);
+            Controls.Add(groupBox2);
             Controls.Add(gbCategories);
             Controls.Add(lblTotalAmount);
             Controls.Add(label1);
@@ -159,6 +212,8 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             gbCategories.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -174,5 +229,9 @@
         private Label lblTotalAmount;
         private ComboBox cbCategories;
         private GroupBox gbCategories;
+        private GroupBox groupBox2;
+        private RadioButton radioAllTime;
+        private RadioButton radioThisMonth;
+        private RadioButton radioThisYear;
     }
 }
