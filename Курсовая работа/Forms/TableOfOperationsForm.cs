@@ -53,6 +53,10 @@ namespace CoursePaper.Forms
 
             dataGridView1.DataSource = table;
 
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                if (Convert.ToDecimal(dataGridView1.Rows[i].Cells[2].Value) < 0)
+                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(245, 196, 196);
+
             lblTotalAmount.Text = totalAmount.ToString();
 
             if (totalAmount < 0)
